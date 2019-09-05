@@ -3,10 +3,15 @@ import { Table } from 'reactstrap';
 import moment from 'moment';
 import config from '../Config';
 import { getEvents } from '../GraphService';
+import Clock from './Clock';
+import Room from './Room';
+import Footer from './Footer';
+import TopBar from './TopBar';
+
 
 // Helper function to format Graph date/time
 function formatDateTime(dateTime) {
-  return moment.utc(dateTime).format('M/D/YY h:mm A');
+  return moment.utc(dateTime).format('M/D/YY h:mm a');
 }
 
 export default class Calendar extends React.Component {
@@ -14,7 +19,7 @@ export default class Calendar extends React.Component {
     super(props);
 
     this.state = {
-      events: []
+      events: [],
     };
   }
 
@@ -26,43 +31,28 @@ export default class Calendar extends React.Component {
       });
       // Get the user's events
       var events = await getEvents(accessToken);
+
+      //Testing sending email 
+      // var email = await postEmail(accessToken);
+
       // Update the array of events in state
-      this.setState({events: events.value});
+      this.setState({ events: events.value });
     }
-    catch(err) {
+    catch (err) {
       this.props.showError('ERROR', JSON.stringify(err));
     }
   }
 
+
   render() {
     return (
       <div>
-        <h1>Calendar</h1>
-        <Table>
-          <thead>
-            <tr>
-              <th scope="col">Organizer</th>
-              <th scope="col">Subject</th>
-              <th scope="col">Start</th>
-              <th scope="col">End</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.events.map(
-              function(event){
-                return(
-                  <tr key={event.id}>
-                    <td>{event.organizer.emailAddress.name}</td>
-                    <td>{event.subject}</td>
-                    <td>{formatDateTime(event.start.dateTime)}</td>
-                    <td>{formatDateTime(event.end.dateTime)}</td>
-                  </tr>
-                );
-              })}
-          </tbody>
-        </Table>
+        <TopBar/>
+        <Room />
+        <Footer/>
+
       </div>
     );
   }
-  }
+}
 

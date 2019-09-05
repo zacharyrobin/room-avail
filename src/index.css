@@ -1,9 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
 body {
   padding-top: 4.5rem;
+  font-family: 'Questrial', sans-serif;
 }
 
 .alert-pre {
   word-wrap: break-word;
   word-break: break-all;
   white-space: pre-wrap;
+}
+.navbar {
+  background-color:#18181a;
+}
+
+.footer {
+  background-color: #424242;
+  position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: white;
+   text-align: center;
+   padding-top:10px;
+   padding-bottom:10px;
+}
+
+
+.footerContent {
+  color:white;
+  float:left;
+  letter-spacing: 1px;
+}
+
+.footerContent2{
+  float:right;
+  letter-spacing: 1px;
+}
+
+.top {
+  background-color: #18181a;
+  position: fixed;
+   left: 0;
+   top:0;
+   width: 100%;
+   color: white;
+   text-align: center;
+   padding-top:150px;
+   padding-bottom:10px;
+}
+
+.RoomName {
+  float:left;
+  position:fixed;
+  top:100px;
 }

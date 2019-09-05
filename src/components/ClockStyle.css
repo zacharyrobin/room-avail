@@ -1,0 +1,51 @@
+.clock {
+    color:#a7a7a7;
+    width: 250px;;
+    float:right;
+    height:70px;
+    position:relative;
+    margin-top: -60px;
+    margin-bottom:60px;
+}
+
+.left {
+    display:block;
+    /* background-color:green; */
+    float:left;
+    font-size:70px;
+    height:100%;
+    width:70%;
+    margin-top: -10px;
+}
+
+.right {
+    display:block;
+    /* background-color:red; */
+    float:rigth;
+    height:100%;
+}
+
+.upper {
+    /* background-color:blue; */
+    height:50%;
+    text-align: center;
+    display: block;
+
+}
+
+.lower {
+    height:50%;
+    display: block;
+    float: left;
+    margin-left: -40px;
+}
+
+.centered {
+    display:block;
+    font-size:30px;
+    float: left;
+}
+
+
+
+

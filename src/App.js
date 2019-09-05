@@ -9,6 +9,10 @@ import Welcome from './components/Welcome';
 import 'bootstrap/dist/css/bootstrap.css';
 import { getUserDetails } from './GraphService';
 import Calendar from './components/Calendar';
+import CustomizedMenus from './components/Menu';
+
+import Particles from 'react-particles-js';
+
 
 class App extends Component {
   //Constructor 
@@ -118,8 +122,8 @@ class App extends Component {
 
     return (
       <Router>
-        <div>
 
+        <div>
           <NavBar
             isAuthenticated={this.state.isAuthenticated}
             authButtonMethod={this.state.isAuthenticated ? this.logout.bind(this) : this.login.bind(this)}
